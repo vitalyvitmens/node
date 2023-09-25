@@ -1,17 +1,35 @@
 const yargs = require('yargs')
 const pkg = require('./package.json')
 const { addNote, printNotes, removeNotes } = require('./notes.controller')
+/* 
+! Команда для вывода заметок с id:
+node index list
+! Консоль:
+    Here is the list of notes:
+    1695635575911 Hello
+
+! Команда для добавления заметки которую в последствии удалим:
+node index add --title=noteToDelete
+! Консоль:
+    Note with title: noteToDelete was added!
+
+! Команда для удаления заметки по id=1695651264461:
+node index remove --id=1695651264461
+! Консоль:
+    Note with id: 1695651264461 has been removed!
+*/
+
 // require('./module')
 
 // const person = {
-//   name: 'Egor',
-//   age: 15,
-// }
-
-// function getname(obj) {
-//   return obj.name
-// }
-
+  //   name: 'Egor',
+  //   age: 15,
+  // }
+  
+  // function getname(obj) {
+    //   return obj.name
+    // }
+    
 // console.log(getname(person))
 
 // console.log(__filename)
@@ -49,7 +67,7 @@ yargs.command({
   describe: 'Remove note by id',
   builder: {
     id: {
-      type: 'string', 
+      type: 'string',
       describe: 'Note to be deleted',
       demandOption: true,
     },
